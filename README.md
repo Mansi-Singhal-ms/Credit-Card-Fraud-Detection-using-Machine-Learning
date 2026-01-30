@@ -32,6 +32,8 @@ fraud - Is the transaction fraudulent.
 
 ## 🔍 Exploratory Data Analysis (EDA)
 
+Class Distribution: Checked the balance of fraudulent vs. legitimate transactions in the fraud column.
+
 Analyzed feature distributions
 
 Performed data leakage checks using correlation analysis
@@ -39,8 +41,6 @@ Performed data leakage checks using correlation analysis
 Verified data quality (missing values, outliers)
 
 Correlation Heatmap: Plotted to examine relationships between features.
-
-Class Distribution: Checked the balance of fraudulent vs. legitimate transactions in the fraud column.
 
 ## Data Preprocessing
 
@@ -50,9 +50,11 @@ We checked for missing values using df.isnull().sum(). Missing data was imputed 
 ### Outlier Detection and Handling
 Outliers were detected using box plots for key columns:
 
-distance_from_home
-distance_from_last_transaction
-ratio_to_median_purchase_price
+├── distance_from_home
+
+├── distance_from_last_transaction
+
+├── ratio_to_median_purchase_price
 
 Outliers were handled using a combination of log transformation and IQR-based capping, with all preprocessing parameters learned exclusively from training data to ensure robust and leakage-free model evaluation.
 
@@ -62,11 +64,11 @@ Train-test split performed before modeling
 
 Multiple models were initially evaluated:
 
-Decision Tree
+├── Decision Tree
 
-Random Forest
+├── Random Forest
 
-Logistic Regression
+├── Logistic Regression
 
 Tree-based models showed near-perfect validation scores, which raised concerns about overfitting or memorization. After verification, a simpler, reliable and more interpretable model was selected.
 
@@ -108,9 +110,13 @@ High recall is essential to minimize missed fraud cases
 
 ## 📁 Repository Structure
 ├── eda & preprocessing.ipynb
+
 ├── model training.ipynb
+
 ├── README.md
+
 ├── requirements.txt
+
 └── final_model.pkl
 
 ## 🏁 Conclusion
