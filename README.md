@@ -50,11 +50,11 @@ We checked for missing values using df.isnull().sum(). Missing data was imputed 
 ### Outlier Detection and Handling
 Outliers were detected using box plots for key columns:
 
-├── distance_from_home
+├─ distance_from_home
 
-├── distance_from_last_transaction
+├─ distance_from_last_transaction
 
-├── ratio_to_median_purchase_price
+├─ ratio_to_median_purchase_price
 
 Outliers were handled using a combination of log transformation and IQR-based capping, with all preprocessing parameters learned exclusively from training data to ensure robust and leakage-free model evaluation.
 
@@ -88,7 +88,7 @@ Effective handling of class imbalance
 
 ## 📈 Model Evaluation (Test Set)
 
-Metric	                    Value
+Metric :-               
 Accuracy	                  95%
 Recall (Fraud)	            97%
 Precision (Fraud)	          64%
