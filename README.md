@@ -32,8 +32,6 @@ fraud - Is the transaction fraudulent.
 
 ## 🔍 Exploratory Data Analysis (EDA)
 
-Checked class imbalance and target distribution
-
 Analyzed feature distributions
 
 Performed data leakage checks using correlation analysis
@@ -46,10 +44,10 @@ Class Distribution: Checked the balance of fraudulent vs. legitimate transaction
 
 ## Data Preprocessing
 
-#### Missing Data
+### Missing Data
 We checked for missing values using df.isnull().sum(). Missing data was imputed or removed based on its significance.
 
-#### Outlier Detection and Handling
+### Outlier Detection and Handling
 Outliers were detected using box plots for key columns:
 
 distance_from_home
@@ -72,6 +70,56 @@ Logistic Regression
 
 Tree-based models showed near-perfect validation scores, which raised concerns about overfitting or memorization. After verification, a simpler, reliable and more interpretable model was selected.
 
-# ✅ Final Model Selected
+## ✅ Final Model Selected
 
 Logistic Regression (with regularization and class balancing)
+
+Reasons for selection:
+
+Demonstrates better generalization on unseen data
+
+Stable validation metrics
+
+High interpretability
+
+Effective handling of class imbalance
+
+## 📈 Model Evaluation (Test Set)
+
+Metric	                    Value
+Accuracy	                  95%
+Recall (Fraud)	            97%
+Precision (Fraud)	          64%
+ROC-AUC	                    0.99
+PR-AUC	                    0.88
+
+### Metric Interpretation
+
+ROC-AUC measures overall class separability
+PR-AUC is more informative for imbalanced datasets and reflects fraud detection quality
+
+## 🧠 Key Learnings
+
+Proper model evaluation on imbalanced data is more important than achieving high accuracy.
+
+PR-AUC is a critical metric for fraud detection problems
+
+High recall is essential to minimize missed fraud cases
+
+## 📁 Repository Structure
+├── eda & preprocessing.ipynb
+├── model training.ipynb
+├── README.md
+├── requirements.txt
+└── final_model.pkl
+
+## 🏁 Conclusion
+
+A well-regularized Logistic Regression model was successfully built and evaluated for fraud detection. The model demonstrates strong performance on unseen data and is suitable for real-world imbalanced classification problems.
+
+## Recommendations:
+Real-Time Monitoring: Implementing this model in a real-time transaction monitoring system can help flag high-risk transactions promptly, reducing fraud-related losses.
+
+Continuous Model Updating: Regular updates with new transaction data will ensure the model adapts to emerging fraud patterns.
+
+By integrating this machine learning-based solution into financial systems, organizations can strengthen their defenses against fraud, ensuring both security and a seamless customer experience.
